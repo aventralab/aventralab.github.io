@@ -2,22 +2,64 @@
 <html lang="en">
 <head>
 
-     <title>Aventra </title>
+     <title>Aventra Labs</title>
 
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="">
-     <meta name="keywords" content="">
-     <meta name="team" content="">
+     <meta name="description" content="We’re building the future of electronics, robotics, IT, and networking. Stay tuned for cutting-edge innovations!">
+     <meta name="keywords" content="electronics, robotics, IT, networking, innovation">
+     <meta name="team" content="Aventra Labs">
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <meta name="author" content="Aventra Labs">
+     <link rel="stylesheet" href="css/font-awesome.min.css">
 
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="css/templatemo-style.css">
 
+     <style>
+          body {
+               margin: 0;
+               overflow: hidden; /* Prevent all scrolling */
+               height: 100vh; /* Ensure the body occupies the full viewport height */
+          }
+
+          #home {
+               height: 100vh; /* Ensure the home section fits the viewport */
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               text-align: center;
+          }
+
+          .container {
+               max-width: 100%; /* Prevent container overflow */
+          }
+
+          .typing-effect {
+               color: white;
+               font-size: 2rem;
+               white-space: nowrap;
+               overflow: hidden;
+               border-right: 2px solid white;
+               animation: typing 3s steps(30, end), blink 0.5s step-end infinite alternate;
+          }
+
+          @keyframes typing {
+               from { width: 0; }
+               to { width: 100%; }
+          }
+
+          @keyframes blink {
+               from { border-color: transparent; }
+               to { border-color: white; }
+          }
+     </style>
+
 </head>
 <body>
 
-     <!-- PRE LOADER -->
+     
      <section class="preloader">
           <div class="spinner">
 
@@ -53,48 +95,7 @@
     </section>
 
 
-    <div class="menu-bg"></div>
-    <div class="menu-burger">☰</div>
 
-    <div class="menu-items">
-       <div class="container">
-         <div class="row">
-           <div class="col-md-offset-2 col-md-4 col-sm-6">
-            <h1>Navigations</h1>
-             <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Our Studio</a></li>
-                <li><a href="#">Journal</a></li>
-                <li><a href="#">Start a project</a></li>
-                <li><a href="#">Email Us</a></li>
-            </ul>
-           </div>
-
-           <div class="col-md-4 col-sm-6">
-             <address>
-               <h1>Our Studio</h1>
-               <p>1234 New Street View, <br> Kumasi, Ghana</p>
-               <div class="google-map">
-                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1197183.8373802372!2d-1.9415093691103689!3d6.781986417238027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb96f349e85efd%3A0xb8d1e0b88af1f0f5!2sKumasi+Central+Market!5e0!3m2!1sen!2sth!4v1532967884907" allowfullscreen></iframe>
-               </div>
-             </address>
-           </div> 
-
-           <div class="col-md-12 col-sm-12">
-             <ul class="social-icon">
-              <li class="line"></li>
-               <li><a href="https://fb.com/templatemo" class="fa fa-facebook"></a></li>
-               <li><a href="#" class="fa fa-twitter"></a></li>
-               <li><a href="https://plus.google.com/+templatemo" class="fa fa-google"></a></li>
-               <li><a href="#" class="fa fa-instagram"></a></li>
-             </ul>
-           </div>
-         </div>
-       </div>
-    </div>
-
-
-     <!-- HOME -->
      <section id="home">
         <div class="overlay"></div>
           <div class="container">
@@ -102,32 +103,33 @@
 
                     <div class="col-md-12 col-sm-12">
                          <div class="home-info">
-                              <h1>We are getting ready <br>to launch new CREATIVE site!</h1>
-                              <!-- You can change the date time in init.js file -->
+                              <h1 class="typing-effect">Aventra Labs</h1>
+                              <h2 style="color: white;">Innovating the future of electronics, robotics, IT, and networking.</h2>
+                              <h3 style="color: white;">Coming Soon!!!</h3>
                               <ul class="countdown">
                                    <li>
-                                        <span class="days">14</span>
+                                        <span class="days">30</span>
                                         <h3>Days</h3>
                                    </li>
                                    <li>
                                         <span class="hours">10</span>
-                                        <h3>hours</h3>
+                                        <h3>Hours</h3>
                                    </li>
                                    <li>
-                                        <span class="minutes">15</span>
-                                        <h3>minutes</h3>
+                                        <span class="minutes">500</span>
+                                        <h3>Minutes</h3>
                                    </li>
                                    <li>
-                                        <span class="seconds">34</span>
-                                        <h3>seconds</h3>
+                                        <span class="seconds">00</span>
+                                        <h3>Seconds</h3>
                                    </li>     
                               </ul>
-                              <div class="subscribe-form">
-                                <form action="" method="get">
-                                  <input type="email" name="email" class="form-control" placeholder="Enter your email" required="">
+                              <!-- <div class="subscribe-form">
+                                <form action="" method="get"></form>
+                                  <input type="email" name="email" class="form-control" placeholder="Subscribe for updates" required="">
                                   <button type="submit" class="form-control"><i class="fa fa-envelope-o"></i></button>
                                 </form>
-                              </div>
+                              </div> -->
                          </div>
                     </div>
 
@@ -136,6 +138,31 @@
      </section>
 
      <!-- SCRIPTS -->
+     <script>
+          // Countdown Timer Logic
+          const countdown = () => {
+               const targetDate = new Date("2025-05-01T23:59:59").getTime(); // Set your target date here
+               const now = new Date().getTime();
+               const difference = targetDate - now;
+
+               if (difference > 0) {
+                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                    document.querySelector(".countdown .days").textContent = days;
+                    document.querySelector(".countdown .hours").textContent = hours;
+                    document.querySelector(".countdown .minutes").textContent = minutes;
+                    document.querySelector(".countdown .seconds").textContent = seconds;
+               } else {
+                    document.querySelector(".countdown").innerHTML = "<h3>Launched!</h3>";
+               }
+          };
+
+          // Update the countdown every second
+          setInterval(countdown, 1000);
+     </script>
      <script src="js/jquery.js"></script>
      <script src="js/bootstrap.min.js"></script>
      <script src="js/vegas.min.js"></script>
