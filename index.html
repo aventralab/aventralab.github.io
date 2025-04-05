@@ -8,7 +8,7 @@
     <meta name="description" content="We’re building the future of electronics, robotics, IT, and networking. Stay tuned for cutting-edge innovations!">
     <meta name="keywords" content="electronics, robotics, IT, networking, innovation">
     <meta name="team" content="Aventra Labs">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="author" content="Aventra Labs">
     <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -19,21 +19,26 @@
     <style>
         body {
             margin: 0;
-            overflow: hidden; /* Prevent all scrolling */
+            overflow-x: hidden; /* Prevent horizontal scrolling */
             height: 100vh; /* Ensure the body occupies the full viewport height */
             background-color: #000; /* Set a default background color */
+            font-family: sans-serif; /* Added a default font */
         }
 
         #home {
             height: 100vh; /* Ensure the home section fits the viewport */
             display: flex;
+            flex-direction: column; /* Stack items vertically on smaller screens */
             align-items: center;
             justify-content: center;
             text-align: center;
+            padding: 20px; /* Add padding for smaller screens */
         }
 
         .container {
+            width: 100%; /* Take full width */
             max-width: 100%; /* Prevent container overflow */
+            padding: 0 15px; /* Add some padding on the sides */
         }
 
         .typing-effect {
@@ -42,8 +47,7 @@
             white-space: nowrap;
             overflow: hidden;
             border-right: 2px solid white;
-            animation: typing 0s steps(25, end) infinite, blink 0.5s step-end infinite alternate; Adjust steps to match the number of characters */
-            /* animation: typing 3s steps(30, end), blink 0.5s step-end infinite alternate; */
+            animation: typing 0s steps(25, end) infinite, blink 0.5s step-end infinite alternate; /* Adjust steps to match the number of characters */
         }
 
         @keyframes typing {
@@ -58,6 +62,52 @@
 
         #dynamic-text {
             color: white; /* Ensure the dynamic text is visible */
+        }
+
+        /* Grid adjustments */
+        .grid {
+            display: none; /* Hide grid on smaller screens */
+        }
+
+        /* Countdown adjustments */
+        .countdown {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+
+        .countdown li {
+            margin: 10px;
+            text-align: center;
+        }
+
+        .countdown span {
+            display: block;
+            font-size: 2rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .typing-effect {
+                font-size: 1.5rem; /* Smaller font size on smaller screens */
+            }
+            .countdown span {
+                font-size: 1.5rem;
+            }
+            .grid {
+                display: none; /* Hide grid on smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .typing-effect {
+                font-size: 1.2rem; /* Even smaller font size on very small screens */
+            }
+            .countdown span {
+                font-size: 1.2rem;
+            }
         }
     </style>
 
