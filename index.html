@@ -1,174 +1,189 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Aventra Labs</title>
 
-     <title>Aventra Labs</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="We’re building the future of electronics, robotics, IT, and networking. Stay tuned for cutting-edge innovations!">
+    <meta name="keywords" content="electronics, robotics, IT, networking, innovation">
+    <meta name="team" content="Aventra Labs">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-     <meta name="description" content="We’re building the future of electronics, robotics, IT, and networking. Stay tuned for cutting-edge innovations!">
-     <meta name="keywords" content="electronics, robotics, IT, networking, innovation">
-     <meta name="team" content="Aventra Labs">
-     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Aventra Labs">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
 
-     <meta name="author" content="Aventra Labs">
-     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="styles.css">
 
-     <!-- MAIN CSS -->
-     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent all scrolling */
+            height: 100vh; /* Ensure the body occupies the full viewport height */
+            background-color: #000; /* Set a default background color */
+        }
 
-     <style>
-          body {
-               margin: 0;
-               overflow: hidden; /* Prevent all scrolling */
-               height: 100vh; /* Ensure the body occupies the full viewport height */
-          }
+        #home {
+            height: 100vh; /* Ensure the home section fits the viewport */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
 
-          #home {
-               height: 100vh; /* Ensure the home section fits the viewport */
-               display: flex;
-               align-items: center;
-               justify-content: center;
-               text-align: center;
-          }
+        .container {
+            max-width: 100%; /* Prevent container overflow */
+        }
 
-          .container {
-               max-width: 100%; /* Prevent container overflow */
-          }
+        .typing-effect {
+            color: white;
+            font-size: 2rem;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid white;
+            animation: typing 0s steps(25, end) infinite, blink 0.5s step-end infinite alternate; Adjust steps to match the number of characters */
+            /* animation: typing 3s steps(30, end), blink 0.5s step-end infinite alternate; */
+        }
 
-          .typing-effect {
-               color: white;
-               font-size: 2rem;
-               white-space: nowrap;
-               overflow: hidden;
-               border-right: 2px solid white;
-               animation: typing 3s steps(30, end), blink 0.5s step-end infinite alternate;
-          }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
 
-          @keyframes typing {
-               from { width: 0; }
-               to { width: 100%; }
-          }
+        @keyframes blink {
+            from { border-color: transparent; }
+            to { border-color: white; }
+        }
 
-          @keyframes blink {
-               from { border-color: transparent; }
-               to { border-color: white; }
-          }
-     </style>
+        #dynamic-text {
+            color: white; /* Ensure the dynamic text is visible */
+        }
+    </style>
 
 </head>
 <body>
 
-     
-     <section class="preloader">
-          <div class="spinner">
-
-               <span class="spinner-rotate"></span>
-               
-          </div>
-     </section>
-
-
-     <!-- GRID LINE -->
-    <section class="grid">
-         <div class="container">
-            <div class="row">
-
-              <div class="col-md-2 col-sm-2">
-                <div class="grid-line"></div>
-              </div>
-              <div class="col-md-2 col-sm-2">
-                <div class="grid-line"></div>
-              </div>
-              <div class="col-md-2 col-sm-2">
-                <div class="grid-line"></div>
-              </div>
-              <div class="col-md-2 col-sm-2">
-                <div class="grid-line"></div>
-              </div>
-              <div class="col-md-2 col-sm-2">
-                <div class="grid-line"></div>
-              </div>
-
-            </div>
-         </div>
+    <section class="preloader">
+        <div class="spinner">
+            <span class="spinner-rotate"></span>
+        </div>
     </section>
 
+    <!-- GRID LINE -->
+    <section class="grid">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 col-sm-2">
+                    <div class="grid-line"></div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="grid-line"></div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="grid-line"></div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="grid-line"></div>
+                </div>
+                <div class="col-md-2 col-sm-2">
+                    <div class="grid-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-
-     <section id="home">
+    <section id="home">
         <div class="overlay"></div>
-          <div class="container">
-               <div class="row">
-
-                    <div class="col-md-12 col-sm-12">
-                         <div class="home-info">
-                              <h1 class="typing-effect">Aventra Labs</h1>
-                              <h2 style="color: white;">Innovating the future of electronics, robotics, IT, and networking.</h2>
-                              <h3 style="color: white;">Coming Soon!!!</h3>
-                              <ul class="countdown">
-                                   <li>
-                                        <span class="days">30</span>
-                                        <h3>Days</h3>
-                                   </li>
-                                   <li>
-                                        <span class="hours">10</span>
-                                        <h3>Hours</h3>
-                                   </li>
-                                   <li>
-                                        <span class="minutes">500</span>
-                                        <h3>Minutes</h3>
-                                   </li>
-                                   <li>
-                                        <span class="seconds">00</span>
-                                        <h3>Seconds</h3>
-                                   </li>     
-                              </ul>
-                              <!-- <div class="subscribe-form">
-                                <form action="" method="get"></form>
-                                  <input type="email" name="email" class="form-control" placeholder="Subscribe for updates" required="">
-                                  <button type="submit" class="form-control"><i class="fa fa-envelope-o"></i></button>
-                                </form>
-                              </div> -->
-                         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="home-info">
+                        <h1 class="typing-effect">Aventra Labs</h1>
+                        <h2 style="color: white;">Innovating the future of <span id="dynamic-text"></span></h2>
+                        <h3 style="color: white;">Coming Soon!!!</h3>
+                        <ul class="countdown">
+                            <li>
+                                <span class="days">30</span>
+                                <h3>Days</h3>
+                            </li>
+                            <li>
+                                <span class="hours">10</span>
+                                <h3>Hours</h3>
+                            </li>
+                            <li>
+                                <span class="minutes">500</span>
+                                <h3>Minutes</h3>
+                            </li>
+                            <li>
+                                <span class="seconds">00</span>
+                                <h3>Seconds</h3>
+                            </li>
+                        </ul>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-               </div>
-          </div>
-     </section>
+    <!-- SCRIPTS -->
+    <script>
+        // Countdown Timer Logic
+        const countdown = () => {
+            const targetDate = new Date("2025-05-01T23:59:59").getTime(); // Set your target date here
+            const now = new Date().getTime();
+            const difference = targetDate - now;
 
-     <!-- SCRIPTS -->
-     <script>
-          // Countdown Timer Logic
-          const countdown = () => {
-               const targetDate = new Date("2025-05-01T23:59:59").getTime(); // Set your target date here
-               const now = new Date().getTime();
-               const difference = targetDate - now;
+            if (difference > 0) {
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-               if (difference > 0) {
-                    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-                    const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                document.querySelector(".countdown .days").textContent = days;
+                document.querySelector(".countdown .hours").textContent = hours;
+                document.querySelector(".countdown .minutes").textContent = minutes;
+                document.querySelector(".countdown .seconds").textContent = seconds;
+            } else {
+                document.querySelector(".countdown").innerHTML = "<h3>Launched!</h3>";
+            }
+        };
 
-                    document.querySelector(".countdown .days").textContent = days;
-                    document.querySelector(".countdown .hours").textContent = hours;
-                    document.querySelector(".countdown .minutes").textContent = minutes;
-                    document.querySelector(".countdown .seconds").textContent = seconds;
-               } else {
-                    document.querySelector(".countdown").innerHTML = "<h3>Launched!</h3>";
-               }
-          };
+        // Update the countdown every second
+        setInterval(countdown, 1000);
 
-          // Update the countdown every second
-          setInterval(countdown, 1000);
-     </script>
-     <script src="jquery.js"></script>
-     <script src="bootstrap.min.js"></script>
-     <script src="vegas.min.js"></script>
-     <script src="countdown.js"></script>
-     <script src="init.js"></script>
-     <script src="custom.js"></script>
+        // Dynamic Text Effect
+        const dynamicText = document.getElementById("dynamic-text");
+        const words = ["electronics", "robotics", "IT", "networking"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        const typeEffect = () => {
+            const currentWord = words[wordIndex];
+            const currentChar = currentWord.substring(0, charIndex);
+            dynamicText.textContent = currentChar;
+
+            if (!isDeleting && charIndex < currentWord.length) {
+                // If condition is true, type the next character
+                charIndex++;
+                setTimeout(typeEffect, 100); // Adjust typing speed here
+            } else if (isDeleting && charIndex > 0) {
+                // If condition is true, remove the previous character
+                charIndex--;
+                setTimeout(typeEffect, 50); // Adjust deleting speed here
+            } else {
+                // If word is deleted then switch to the next word
+                isDeleting = !isDeleting;
+                wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
+                setTimeout(typeEffect, 1200); // Adjust pause before next word here
+            }
+        };
+
+        typeEffect();
+    </script>
+    <script src="jquery.js"></script>
+    <script src="custom.js"></script>
 
 </body>
 </html>
