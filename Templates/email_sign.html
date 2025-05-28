@@ -1,0 +1,2431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Email Signature Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600&family=Roboto:wght@400;500&family=Playfair+Display:wght@400;500&family=Montserrat:wght@400;500;600&family=Open+Sans:wght@400;500;600&family=Lato:wght@400;500;700&family=Source+Sans+Pro:wght@400;600&family=Merriweather:wght@400;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #eaf3fb 0%, #c9e7fa 100%);
+            background-image: 
+                linear-gradient(135deg, #eaf3fb 0%, #c9e7fa 100%),
+                radial-gradient(circle at 25px 25px, rgba(78, 161, 243, 0.08) 2%, transparent 0%),
+                radial-gradient(circle at 75px 75px, rgba(78, 161, 243, 0.08) 2%, transparent 0%);
+            background-size: 100% 100%, 100px 100px, 100px 100px;
+            color: #22304a;
+            min-height: 100vh;
+            overflow: hidden;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(78, 161, 243, 0.1) 0%, rgba(78, 161, 243, 0.05) 100%);
+            pointer-events: none;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            gap: 30px;
+            height: calc(100vh - 40px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-section {
+            flex: 1;
+            min-width: 400px;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 12px;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .form-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(78, 161, 243, 0.1) 0%, rgba(78, 161, 243, 0.05) 100%);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .preview-section {
+            flex: 1;
+            min-width: 850px;
+            max-width: 500px;
+            background: linear-gradient(120deg, #fafdff 60%, #e3f1fd 100%);
+            background-blend-mode: lighten;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 12px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .preview-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(78, 161, 243, 0.1) 0%, rgba(78, 161, 243, 0.05) 100%);
+            border-radius: 12px;
+            pointer-events: none;
+        }
+
+        .preview-section h1 {
+            margin: 0 0 10px 0;
+            font-size: 20px;
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 24px;
+            background: #4ea1f3;
+            border-radius: 2px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+            width: 100%;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="url"] {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1.5px solid #e3f1fd;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            background: rgba(255,255,255,0.85);
+            color: #22304a;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.04);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group input[type="tel"]:focus,
+        .form-group input[type="url"]:focus {
+            outline: none;
+            border-color: #4ea1f3;
+            box-shadow: 0 0 0 3px rgba(78,161,243,0.13);
+            background: #fafdff;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #2196f3;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.1px;
+        }
+
+        .social-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .social-links .form-group {
+            margin-bottom: 0;
+        }
+
+        .social-links input[type="url"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            transition: all 0.3s;
+            background: rgba(255, 255, 255, 0.15);
+            color: #2c3e50;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .social-links input[type="url"]:focus {
+            outline: none;
+            border-color: #4ea1f3;
+            box-shadow: 0 0 0 3px rgba(78, 161, 243, 0.2);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-links label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .copy-button {
+            display: none;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #f0f2f5;
+        }
+
+        .required-field::after {
+            content: '*';
+            color: #e74c3c;
+            margin-left: 4px;
+        }
+
+        /* Signature Preview Styles */
+        .signature-container {
+            font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            margin: 10px auto;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-image {
+            width: 80px;
+            height: 100px;
+            border-radius: 10px;
+            position: relative;
+            padding: 3px;
+            background: transparent;
+            border: 2px solid #4ea1f3;
+            overflow: hidden;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .name {
+            margin: 0 0 4px 0;
+            font-size: 22px;
+            letter-spacing: -0.5px;
+            font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+        }
+
+        .title {
+            margin: 0;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            opacity: 0.9;
+            filter: brightness(0.9);
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .contact-link {
+            color: #2c3e50;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .contact-text {
+            color: #2c3e50;
+            font-size: 14px;
+        }
+
+        .social-icon {
+            display: inline-block;
+            margin: 0 6px;
+        }
+
+        .social-icon img {
+            width: 20px;
+            height: 20px;
+            filter: brightness(0.9);
+        }
+
+        .initials-fallback {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #4ea1f3, #2c3e50);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #2c3e50;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 14px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Add new tab styles */
+        .tabs {
+            display: flex;
+            gap: 2px;
+            margin-bottom: 40px;
+            background: #f0f2f5;
+            padding: 4px;
+            border-radius: 8px;
+        }
+
+        .tab {
+            flex: 1;
+            padding: 12px;
+            text-align: center;
+            background: transparent;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            color: #6c757d;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            background: white;
+            color: #4ea1f3;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .tab-icon {
+            width: 16px;
+            height: 16px;
+            vertical-align: middle;
+            margin-right: 6px;
+            opacity: 0.7;
+        }
+
+        .tab.active .tab-icon {
+            opacity: 1;
+        }
+
+        /* Add new styles for image upload and initials */
+        .image-upload-container {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .image-preview {
+            width: 90px;
+            height: 110px;
+            border-radius: 12px;
+            border: 2.5px dashed #4ea1f3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #fafdff;
+            position: relative;
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .upload-button {
+            background: linear-gradient(90deg, #4ea1f3 60%, #2196f3 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            box-shadow: 0 2px 8px rgba(33,150,243,0.08);
+            transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+        }
+        .upload-button:hover {
+            background: linear-gradient(90deg, #2196f3 60%, #4ea1f3 100%);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 4px 16px rgba(33,150,243,0.13);
+        }
+
+        .upload-button:active {
+            transform: translateY(0);
+        }
+
+        .upload-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        #imageUrl {
+            display: none;
+        }
+
+        /* Add modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .modal-header {
+            margin-bottom: 20px;
+        }
+
+        .modal-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 20px;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .signature-preview {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e1e5ea;
+            margin: 15px 0;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .modal-button {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .modal-button.primary {
+            background: #4ea1f3;
+            color: white;
+        }
+
+        .modal-button.secondary {
+            background: #f8f9fa;
+            color: #2c3e50;
+            border: 1px solid #e1e5ea;
+        }
+
+        .modal-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            color: #6c757d;
+            transition: color 0.3s;
+        }
+
+        .close-modal:hover {
+            color: #2c3e50;
+        }
+
+        .download-icon {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Add new styles for design options */
+        .design-options {
+            margin-top: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 12px;
+            flex: 1;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .design-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px;
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .design-tab {
+            flex: 1;
+            height: 32px;
+            padding: 0 12px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 12px;
+            color: #2c3e50;
+            transition: all 0.3s;
+        }
+
+        .design-tab.active {
+            background: rgba(78, 161, 243, 0.2);
+            color: #4ea1f3;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .design-tab:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .design-content {
+            display: none;
+        }
+
+        .design-content.active {
+            display: block;
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+            gap: 4px;
+            background: white;
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px solid #e1e5ea;
+            width: 100%;
+        }
+
+        .option-group {
+            margin-bottom: 6px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 6px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .option-group label {
+            display: block;
+            margin-bottom: 4px;
+            color: #2c3e50;
+            font-weight: 500;
+            font-size: 11px;
+            padding: 0 2px;
+        }
+
+        /* Update color options with glassmorphism */
+        .color-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(32px, 1fr));
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 8px;
+            border-radius: 6px;
+        }
+
+        .color-option {
+            width: 32px;
+            height: 32px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-option:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .color-option::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .color-option.active::after {
+            border-color: #4ea1f3;
+        }
+
+        .style-select {
+            width: 100%;
+            height: 32px;
+            padding: 0 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 6px;
+            color: #2c3e50;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .style-select:focus {
+            outline: none;
+            border-color: #4ea1f3;
+            box-shadow: 0 0 0 3px rgba(78, 161, 243, 0.2);
+        }
+
+        .style-select option {
+            background: #ffffff;
+            color: #2c3e50;
+        }
+
+        .layout-options, .photo-layout-options, .shape-options, .size-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4px;
+            background: white;
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px solid #e1e5ea;
+        }
+
+        .layout-option, .photo-layout-option, .shape-option, .size-option {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            font-size: 10px;
+            min-height: 40px;
+            width: 100%;
+        }
+
+        .layout-option .layout-preview, .photo-layout-option .layout-preview, .shape-option .shape-preview, .size-option .size-preview {
+            width: 100%;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f2f5;
+            border-radius: 3px;
+            margin-bottom: 2px;
+            border: 1px solid #e1e5ea;
+        }
+
+        .layout-option svg, .photo-layout-option svg, .shape-option svg, .size-option svg {
+            width: 14px;
+            height: 14px;
+            margin-bottom: 2px;
+        }
+
+        .icon-options, .shape-options, .size-options, .border-options, .alignment-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+            gap: 4px;
+            background: white;
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px solid #e1e5ea;
+        }
+
+        .icon-option, .shape-option, .size-option, .border-option, .alignment-option {
+            composes: interactive-element;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            font-size: 10px;
+            min-height: 50px;
+            width: 100%;
+        }
+
+        .icon-option .icon-preview, .shape-option .shape-preview {
+            width: 100%;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0f2f5;
+            border-radius: 3px;
+            margin-bottom: 2px;
+            border: 1px solid #e1e5ea;
+        }
+
+        .icon-option svg, .shape-option svg, .size-option svg, .border-option svg, .alignment-option svg {
+            width: 16px;
+            height: 16px;
+            margin-bottom: 2px;
+        }
+
+        .icon-option:hover, .shape-option:hover, .size-option:hover, .border-option:hover, .alignment-option:hover {
+            background: #f0f2f5;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .icon-option.active, .shape-option.active, .size-option.active, .border-option.active, .alignment-option.active {
+            background: #e8f4ff;
+            border-color: #4ea1f3;
+            color: #4ea1f3;
+        }
+
+        .weight-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+            gap: 4px;
+            background: white;
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px solid #e1e5ea;
+        }
+
+        .weight-option {
+            composes: interactive-element;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 4px;
+            font-size: 10px;
+            min-height: 24px;
+            width: 100%;
+        }
+
+        /* Update custom color picker with glassmorphism */
+        .custom-color-picker {
+            margin-top: 8px;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 6px;
+        }
+
+        .custom-color-picker input[type="color"] {
+            width: 100%;
+            height: 32px;
+            padding: 0;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+        }
+
+        /* Standardize select elements */
+        .style-select {
+            composes: interactive-element;
+            width: 100%;
+            height: 32px;
+            padding: 0 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+        }
+
+        /* Update spacing slider with glassmorphism */
+        .spacing-slider {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-radius: 6px;
+            width: 100%;
+            height: 32px;
+        }
+
+        .spacing-range {
+            flex: 1;
+            min-width: 0;
+            height: 4px;
+            background: rgba(78, 161, 243, 0.2);
+            border-radius: 2px;
+            -webkit-appearance: none;
+        }
+
+        .spacing-range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(78, 161, 243, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Standardize design tabs */
+        .design-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 8px;
+            background: #f0f2f5;
+            padding: 4px;
+            border-radius: 6px;
+            border: 1px solid #e1e5ea;
+        }
+
+        .design-tab {
+            flex: 1;
+            height: 32px;
+            padding: 0 12px;
+            text-align: center;
+            background: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 12px;
+            color: #6c757d;
+            transition: all 0.3s;
+        }
+
+        /* Add styles for the signature preview container */
+        #signaturePreview {
+            margin-bottom: 15px;
+            flex-shrink: 0;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        /* Add loading styles */
+        .loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #4ea1f3;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Add mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                display: none;
+            }
+            
+            body::before {
+                content: 'Please use a laptop or larger screen to access the signature generator.';
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                width: 100vw;
+                background: #f5f7fa;
+                color: #2c3e50;
+                font-size: 18px;
+                text-align: center;
+                padding: 20px;
+                box-sizing: border-box;
+            }
+        }
+
+        /* Remove redundant media queries */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+                overflow: auto;
+            }
+            
+            .form-section,
+            .preview-section {
+                max-width: 100%;
+                height: auto;
+            }
+            
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .layout-options,
+            .icon-options,
+            .shape-options,
+            .size-options,
+            .border-options,
+            .alignment-options {
+                flex-direction: column;
+            }
+        }
+
+        /* Common styles for interactive elements */
+        .interactive-element {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        /* Standardize custom color picker */
+        .custom-color-picker {
+            margin-top: 8px;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            border: 1px solid #e1e5ea;
+        }
+
+        .custom-color-picker input[type="color"] {
+            width: 100%;
+            height: 32px;
+            padding: 0;
+            border: 1px solid #e1e5ea;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        /* Standardize select elements */
+        .style-select {
+            composes: interactive-element;
+            width: 100%;
+            height: 32px;
+            padding: 0 12px;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+        }
+
+        /* Standardize spacing slider */
+        .spacing-slider {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px;
+            background: white;
+            border-radius: 6px;
+            border: 1px solid #e1e5ea;
+            width: 100%;
+            height: 32px;
+        }
+
+        .spacing-range {
+            flex: 1;
+            min-width: 0;
+            height: 4px;
+        }
+
+        .spacing-value {
+            min-width: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        /* Standardize design tabs */
+        .design-tabs {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 8px;
+            background: #f0f2f5;
+            padding: 4px;
+            border-radius: 6px;
+            border: 1px solid #e1e5ea;
+        }
+
+        .design-tab {
+            flex: 1;
+            height: 32px;
+            padding: 0 12px;
+            text-align: center;
+            background: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 12px;
+            color: #6c757d;
+            transition: all 0.3s;
+        }
+
+        /* Add styles for toggle options */
+        .toggle-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px;
+            border-radius: 4px;
+            border: 1px solid #e1e5ea;
+        }
+
+        .toggle-option {
+            composes: interactive-element;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            padding: 4px;
+            font-size: 10px;
+            min-height: 24px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid #e1e5ea;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: #2c3e50;
+        }
+
+        .toggle-option:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .toggle-option.active {
+            background: rgba(78, 161, 243, 0.2);
+            border-color: #4ea1f3;
+            color: #4ea1f3;
+        }
+
+        .toggle-option svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* Compact Connect with me section */
+        #signaturePreview .signature-container > table > tr > td > div[style*="Connect with me"] {
+            padding: 6px !important;
+            margin: 0 !important;
+        }
+        #signaturePreview .signature-container p[style*="Connect with me"] {
+            margin-bottom: 2px !important;
+        }
+
+        /* Slightly darken preview text color */
+        #signaturePreview .contact-link,
+        #signaturePreview .contact-text,
+        #signaturePreview .name,
+        #signaturePreview .title {
+            color: #22304a !important;
+        }
+
+        /* Enhance active tab highlight */
+        .tab.active, .design-tab.active {
+            background: #e3f1fd !important;
+            color: #2196f3 !important;
+            box-shadow: 0 4px 16px rgba(33, 150, 243, 0.10) !important;
+            border-bottom: 2px solid #2196f3 !important;
+        }
+
+        /* Mobile responsiveness improvements */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+                gap: 20px;
+            }
+            .form-section, .preview-section {
+                max-width: 100%;
+                min-width: 0;
+                height: auto;
+            }
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 6px;
+            }
+            .container {
+                gap: 10px;
+            }
+            .form-section, .preview-section {
+                padding: 10px;
+            }
+            .signature-container {
+                padding: 8px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h1>Email Signature Generator</h1>
+            <form id="signatureForm">
+                <div class="tabs">
+                    <button type="button" class="tab active" data-tab="personal">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="Personal" class="tab-icon">
+                        Personal
+                    </button>
+                    <button type="button" class="tab" data-tab="contact">
+                        <img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Contact" class="tab-icon">
+                        Contact
+                    </button>
+                    <button type="button" class="tab" data-tab="social">
+                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Social" class="tab-icon">
+                        Social
+                    </button>
+                </div>
+
+                <div id="personal" class="tab-content active">
+                    <div class="form-group">
+                        <label for="name" class="required-field">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="title" class="required-field">Job Title</label>
+                        <input type="text" id="title" name="title" required placeholder="Senior Software Engineer">
+                    </div>
+                    <div class="form-group">
+                        <label class="required-field">Profile Image</label>
+                        <div class="image-upload-container">
+                            <div class="image-preview" id="imagePreview">
+                                <div class="initials-fallback" id="initialsFallback">JD</div>
+                            </div>
+                            <div>
+                                <button type="button" class="upload-button" onclick="document.getElementById('imageUpload').click()">
+                                    <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="17 8 12 3 7 8"></polyline>
+                                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                                    </svg>
+                                    Upload Image
+                                </button>
+                                <input type="file" id="imageUpload" accept="image/*" style="display: none" onchange="handleImageUpload(event)">
+                                <input type="url" id="imageUrl" name="profileImage" required>
+                                <div style="font-size:12px;color:#6c757d;margin-top:6px;">Upload a professional headshot or leave blank to use your initials.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="contact" class="tab-content">
+                    <div class="form-group">
+                        <label for="email" class="required-field">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="john.doe@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="required-field">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="location" class="required-field">Location</label>
+                        <input type="text" id="location" name="location" required placeholder="City, Country">
+                    </div>
+                    <div class="form-group">
+                        <label for="website">Website</label>
+                        <input type="url" id="website" name="website" placeholder="Website (optional)">
+                    </div>
+                </div>
+
+                <div id="social" class="tab-content">
+                    <div class="social-links">
+                        <div class="form-group">
+                            <label for="linkedin">LinkedIn URL</label>
+                            <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+                        </div>
+                        <div class="form-group">
+                            <label for="facebook">Facebook URL</label>
+                            <input type="url" id="facebook" name="facebook" placeholder="https://facebook.com/yourprofile">
+                        </div>
+                        <div class="form-group">
+                            <label for="instagram">Instagram URL</label>
+                            <input type="url" id="instagram" name="instagram" placeholder="https://instagram.com/yourprofile">
+                        </div>
+                        <div class="form-group">
+                            <label for="twitter">X (Twitter) URL</label>
+                            <input type="url" id="twitter" name="twitter" placeholder="https://x.com/yourprofile">
+                        </div>
+                        <div class="form-group">
+                            <label for="github">GitHub URL</label>
+                            <input type="url" id="github" name="github" placeholder="https://github.com/yourprofile">
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="copy-button" onclick="updateLivePreview()">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Live Preview
+                </button>
+            </form>
+            <div class="section-title" style="font-size:15px;color:#2196f3;margin-top:24px;text-align:center;">To use the signature, copy the generated sign and paste it into your email signature.</div>
+        </div>
+
+        <div class="preview-section">
+            <div id="signaturePreview" class="signature-container">
+                <!-- Preview will be updated here -->
+            </div>
+
+            <div class="design-options">
+                <div class="design-tabs">
+                    <button type="button" class="design-tab active" data-tab="colors">Colors & Fonts</button>
+                    <button type="button" class="design-tab" data-tab="layout">Layout & Photo</button>
+                    <button type="button" class="design-tab" data-tab="style">Style & Spacing</button>
+                </div>
+
+                <div id="colors" class="design-content active">
+                    <div class="options-grid">
+                        <div class="option-group">
+                            <label>Color Scheme</label>
+                            <div class="color-options">
+                                <button class="color-option active" data-primary="#4ea1f3" data-secondary="#2c3e50" style="background: linear-gradient(45deg, #4ea1f3, #2c3e50);" title="Blue Color Scheme"></button>
+                                <button class="color-option" data-primary="#2ecc71" data-secondary="#27ae60" style="background: linear-gradient(45deg, #2ecc71, #27ae60);" title="Green Color Scheme"></button>
+                                <button class="color-option" data-primary="#e74c3c" data-secondary="#c0392b" style="background: linear-gradient(45deg, #e74c3c, #c0392b);" title="Red Color Scheme"></button>
+                                <button class="color-option" data-primary="#9b59b6" data-secondary="#8e44ad" style="background: linear-gradient(45deg, #9b59b6, #8e44ad);" title="Purple Color Scheme"></button>
+                            </div>
+                            <div style="margin-top: 8px;">
+                                <button class="color-option custom-color" title="Choose your own colors" style="width: 100%; padding: 8px; display: flex; align-items: center; justify-content: center; gap: 8px; background: #f8f9fa; border: 1px dashed #4ea1f3;">
+                                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="#4ea1f3" stroke-width="2" fill="none">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M12 8v8"></path>
+                                        <path d="M8 12h8"></path>
+                                    </svg>
+                                    Choose Custom Colors
+                                </button>
+                                <div class="custom-color-picker" style="display: none; margin-top: 8px;">
+                                    <div style="display: flex; gap: 8px;">
+                                        <div style="flex: 1;">
+                                            <label for="primaryColor" style="display: block; margin-bottom: 4px; font-size: 11px; color: #2c3e50;">Primary Color</label>
+                                            <input type="color" id="primaryColor" value="#4ea1f3" style="width: 100%; height: 24px; padding: 0; border: 1px solid #e1e5ea; border-radius: 4px;">
+                                        </div>
+                                        <div style="flex: 1;">
+                                            <label for="secondaryColor" style="display: block; margin-bottom: 4px; font-size: 11px; color: #2c3e50;">Secondary Color</label>
+                                            <input type="color" id="secondaryColor" value="#2c3e50" style="width: 100%; height: 24px; padding: 0; border: 1px solid #e1e5ea; border-radius: 4px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option-group">
+                            <label for="fontStyle">Font Style</label>
+                            <select id="fontStyle" class="style-select" title="Select font style for your signature">
+                                <option value="modern">Modern (Inter)</option>
+                                <option value="classic">Classic (Georgia)</option>
+                                <option value="minimal">Minimal (Roboto)</option>
+                                <option value="elegant">Elegant (Playfair Display)</option>
+                                <option value="professional">Professional (Montserrat)</option>
+                                <option value="clean">Clean (Open Sans)</option>
+                                <option value="contemporary">Contemporary (Lato)</option>
+                                <option value="modern-alt">Modern Alt (Source Sans Pro)</option>
+                                <option value="serif">Serif (Merriweather)</option>
+                                <option value="sans-serif">Sans Serif (PT Sans)</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label>Font Weight</label>
+                            <div class="weight-options">
+                                <button class="weight-option active" data-weight="400">Regular</button>
+                                <button class="weight-option" data-weight="500">Medium</button>
+                                <button class="weight-option" data-weight="700">Bold</button>
+                            </div>
+                        </div>
+                        <div class="option-group">
+                            <label>Confidentiality Notice</label>
+                            <div class="toggle-options">
+                                <button class="toggle-option" data-toggle="show">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                    </svg>
+                                    Show
+                                </button>
+                                <button class="toggle-option active" data-toggle="hide">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path>
+                                        <line x1="1" y1="1" x2="23" y2="23"></line>
+                                    </svg>
+                                    Hide
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="layout" class="design-content">
+                    <div class="options-grid">
+                        <div class="option-group">
+                            <label>Layout Style</label>
+                            <div class="layout-options">
+                                <button class="layout-option active" data-layout="standard">
+                                    <div class="layout-preview">
+                                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                                        </svg>
+                                    </div>
+                                    Standard
+                                </button>
+                                <button class="layout-option" data-layout="compact">
+                                    <div class="layout-preview">
+                                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                                        </svg>
+                                    </div>
+                                    Compact
+                                </button>
+                                <button class="layout-option" data-layout="minimal">
+                                    <div class="layout-preview">
+                                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                                        </svg>
+                                    </div>
+                                    Minimal
+                                </button>
+                                <button class="layout-option" data-layout="modern">
+                                    <div class="layout-preview">
+                                        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5">
+                                            <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+                                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                                            <line x1="12" y1="3" x2="12" y2="21"></line>
+                                        </svg>
+                                    </div>
+                                    Modern
+                                </button>
+                            </div>
+                        </div>
+                        <div class="option-group">
+                            <label>Photo Layout</label>
+                            <div class="photo-layout-options">
+                                <button class="photo-layout-option active" data-photo-layout="left">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <rect x="3" y="3" width="8" height="18" rx="1"></rect>
+                                        <rect x="13" y="3" width="8" height="18" rx="1"></rect>
+                                    </svg>
+                                    Left
+                                </button>
+                                <button class="photo-layout-option" data-photo-layout="right">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <rect x="13" y="3" width="8" height="18" rx="1"></rect>
+                                        <rect x="3" y="3" width="8" height="18" rx="1"></rect>
+                                    </svg>
+                                    Right
+                                </button>
+                                <button class="photo-layout-option" data-photo-layout="top">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <rect x="3" y="3" width="18" height="8" rx="1"></rect>
+                                        <rect x="3" y="13" width="18" height="8" rx="1"></rect>
+                                    </svg>
+                                    Top
+                                </button>
+                                <button class="photo-layout-option" data-photo-layout="bottom">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <rect x="3" y="13" width="18" height="8" rx="1"></rect>
+                                        <rect x="3" y="3" width="18" height="8" rx="1"></rect>
+                                    </svg>
+                                    Bottom
+                                </button>
+                            </div>
+                        </div>
+                        <div class="option-group">
+                            <label>Photo Shape</label>
+                            <div class="shape-options">
+                                <button class="shape-option active" data-shape="rounded">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <rect x="3" y="3" width="18" height="18" rx="4"></rect>
+                                    </svg>
+                                    Rounded
+                                </button>
+                                <button class="shape-option" data-shape="circle">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <circle cx="12" cy="12" r="9"></circle>
+                                    </svg>
+                                    Circle
+                                </button>
+                                <button class="shape-option" data-shape="square">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <rect x="3" y="3" width="18" height="18"></rect>
+                                    </svg>
+                                    Square
+                                </button>
+                                <button class="shape-option" data-shape="hexagon">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <path d="M12 3L21 8V16L12 21L3 16V8L12 3Z"></path>
+                                    </svg>
+                                    Hexagon
+                                </button>
+                            </div>
+                        </div>
+                        <div class="option-group">
+                            <label>Photo Size</label>
+                            <div class="size-options">
+                                <button class="size-option active" data-size="medium">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                    </svg>
+                                    Medium
+                                </button>
+                                <button class="size-option" data-size="small">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <rect x="6" y="6" width="12" height="12" rx="2"></rect>
+                                    </svg>
+                                    Small
+                                </button>
+                                <button class="size-option" data-size="large">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <rect x="2" y="2" width="20" height="20" rx="2"></rect>
+                                    </svg>
+                                    Large
+                                </button>
+                                <button class="size-option" data-size="xsmall">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <rect x="8" y="8" width="8" height="8" rx="2"></rect>
+                                    </svg>
+                                    X-Small
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="style" class="design-content">
+                    <div class="options-grid">
+                        <div class="option-group">
+                            <label>Social Icons Style</label>
+                            <div class="icon-options">
+                                <button class="icon-option active" data-style="original">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                    </svg>
+                                    Original
+                                </button>
+                                <button class="icon-option" data-style="filled">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="black" stroke-width="2" fill="black">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                    </svg>
+                                    Filled
+                                </button>
+                                <button class="icon-option" data-style="outlined">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="#4ea1f3" stroke-width="2.5" fill="none">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                    </svg>
+                                    Outlined
+                                </button>
+                                <button class="icon-option" data-style="minimal">
+                                    <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" stroke-width="2" fill="none">
+                                        <text x="12" y="16" text-anchor="middle" font-size="12">T</text>
+                                    </svg>
+                                    Minimal
+                                </button>
+                            </div>
+                        </div>
+                        <div class="option-group">
+                            <label>Border Style</label>
+                            <div class="border-options">
+                                <button class="border-option active" data-border="solid">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                    </svg>
+                                    Solid
+                                </button>
+                                <button class="border-option" data-border="dashed">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-dasharray="4 2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                    </svg>
+                                    Dashed
+                                </button>
+                                <button class="border-option" data-border="none">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-opacity="0">
+                                        <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                                    </svg>
+                                    None
+                                </button>
+                            </div>
+                        </div>
+                        <div class="option-group">
+                            <label>Text Alignment</label>
+                            <div class="alignment-options">
+                                <button class="alignment-option active" data-alignment="left">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                                        <line x1="3" y1="12" x2="15" y2="12"></line>
+                                        <line x1="3" y1="18" x2="18" y2="18"></line>
+                                    </svg>
+                                    Left
+                                </button>
+                                <button class="alignment-option" data-alignment="center">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                                        <line x1="6" y1="12" x2="18" y2="12"></line>
+                                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                                    </svg>
+                                    Center
+                                </button>
+                                <button class="alignment-option" data-alignment="right">
+                                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                                        <line x1="9" y1="12" x2="21" y2="12"></line>
+                                        <line x1="6" y1="18" x2="21" y2="18"></line>
+                                    </svg>
+                                    Right
+                                </button>
+                            </div>
+                        </div>
+                        <div class="option-group">
+                            <label for="spacingRange">Spacing</label>
+                            <div class="spacing-slider">
+                                <input type="range" min="0" max="40" value="20" class="spacing-range" id="spacingRange" title="Adjust spacing between elements" aria-label="Adjust spacing between elements">
+                                <div class="spacing-value">20px</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Remove modal -->
+    <div id="toast" class="toast"></div>
+
+    <script>
+        // Function to show toast message
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        // Debounce function to optimize performance
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Function to update the preview
+        function updatePreview() {
+            const form = document.getElementById('signatureForm');
+            const preview = document.getElementById('signaturePreview');
+            
+            // Get selected design options
+            const activeColor = document.querySelector('.color-option.active');
+            let primaryColor, secondaryColor;
+
+            if (activeColor.classList.contains('custom-color')) {
+                primaryColor = document.getElementById('primaryColor').value;
+                secondaryColor = document.getElementById('secondaryColor').value;
+            } else {
+                primaryColor = activeColor.dataset.primary;
+                secondaryColor = activeColor.dataset.secondary;
+            }
+
+            const fontStyle = document.getElementById('fontStyle').value;
+            const fontWeight = document.querySelector('.weight-option.active').dataset.weight;
+            const layout = document.querySelector('.layout-option.active').dataset.layout;
+            const iconStyle = document.querySelector('.icon-option.active').dataset.style;
+            const photoLayout = document.querySelector('[data-photo-layout].active').dataset.photoLayout;
+            const photoShape = document.querySelector('.shape-option.active').dataset.shape;
+            const photoSize = document.querySelector('.size-option.active').dataset.size;
+            const borderStyle = document.querySelector('.border-option.active').dataset.border;
+            const textAlignment = document.querySelector('.alignment-option.active').dataset.alignment;
+            const spacing = document.getElementById('spacingRange').value;
+
+            // Set font family based on selection
+            let fontFamily = 'Inter';
+            switch(fontStyle) {
+                case 'classic':
+                    fontFamily = 'Georgia';
+                    break;
+                case 'minimal':
+                    fontFamily = 'Roboto';
+                    break;
+                case 'elegant':
+                    fontFamily = 'Playfair Display';
+                    break;
+                case 'professional':
+                    fontFamily = 'Montserrat';
+                    break;
+                case 'clean':
+                    fontFamily = 'Open Sans';
+                    break;
+                case 'contemporary':
+                    fontFamily = 'Lato';
+                    break;
+                case 'modern-alt':
+                    fontFamily = 'Source Sans Pro';
+                    break;
+                case 'serif':
+                    fontFamily = 'Merriweather';
+                    break;
+                case 'sans-serif':
+                    fontFamily = 'PT Sans';
+                    break;
+                default:
+                    fontFamily = 'Inter';
+            }
+
+            // Create styles with font weight
+            const nameStyle = `background: linear-gradient(45deg, ${primaryColor}, ${secondaryColor}); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: ${fontWeight};`;
+            const titleStyle = `color: ${primaryColor}; font-weight: ${fontWeight};`;
+            const contactStyle = `color: ${secondaryColor}; text-decoration: none; font-weight: ${fontWeight};`;
+
+            // Set photo size
+            let photoSizeStyle = '';
+            switch(photoSize) {
+                case 'xsmall':
+                    photoSizeStyle = 'width: 60px; height: 80px;';
+                    break;
+                case 'small':
+                    photoSizeStyle = 'width: 70px; height: 90px;';
+                    break;
+                case 'large':
+                    photoSizeStyle = 'width: 110px; height: 130px;';
+                    break;
+                case 'xlarge':
+                    photoSizeStyle = 'width: 130px; height: 150px;';
+                    break;
+                default: // medium
+                    photoSizeStyle = 'width: 90px; height: 110px;';
+            }
+
+            // Set photo shape styles
+            let photoShapeStyle = '';
+            switch(photoShape) {
+                case 'circle':
+                    photoShapeStyle = 'border-radius: 50%;';
+                    break;
+                case 'rounded':
+                    photoShapeStyle = 'border-radius: 10px;';
+                    break;
+                case 'square':
+                    photoShapeStyle = 'border-radius: 0;';
+                    break;
+                case 'hexagon':
+                    photoShapeStyle = 'clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);';
+                    break;
+                case 'diamond':
+                    photoShapeStyle = 'clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);';
+                    break;
+            }
+
+            // Set layout style
+            let layoutStyle = '';
+            let containerClass = '';
+            switch(layout) {
+                case 'compact':
+                    layoutStyle = `
+                        padding: 15px;
+                        background: #ffffff;
+                        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+                    `;
+                    containerClass = 'compact';
+                    break;
+                case 'minimal':
+                    layoutStyle = `
+                        padding: 10px;
+                        background: transparent;
+                        box-shadow: none;
+                        border: none;
+                    `;
+                    containerClass = 'minimal';
+                    break;
+                case 'modern':
+                    layoutStyle = `
+                        padding: 25px;
+                        background: #ffffff;
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                        border-radius: 16px;
+                    `;
+                    containerClass = 'modern';
+                    break;
+                case 'elegant':
+                    layoutStyle = `
+                        padding: 30px;
+                        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+                        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
+                        border-radius: 20px;
+                    `;
+                    containerClass = 'elegant';
+                    break;
+                default: // standard
+                    layoutStyle = `
+                        padding: 25px;
+                        background: linear-gradient(145deg, #ffffff, #f8f9fa);
+                        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+                    `;
+                    containerClass = 'standard';
+            }
+
+            // Set border style
+            let borderStyleClass = '';
+            switch(borderStyle) {
+                case 'dashed':
+                    borderStyleClass = 'border: 2px dashed';
+                    break;
+                case 'none':
+                    borderStyleClass = 'border: none';
+                    break;
+                default: // solid
+                    borderStyleClass = 'border: 2px solid';
+            }
+
+            // Set text alignment
+            let textAlignStyle = '';
+            switch(textAlignment) {
+                case 'center':
+                    textAlignStyle = 'text-align: center;';
+                    break;
+                case 'right':
+                    textAlignStyle = 'text-align: right;';
+                    break;
+                default: // left
+                    textAlignStyle = 'text-align: left;';
+            }
+
+            // Set icon style
+            let iconStyleClass = '';
+            switch(iconStyle) {
+                case 'filled':
+                    iconStyleClass = 'filter: none !important; fill: black !important; stroke: black !important;';
+                    break;
+                case 'outlined':
+                    iconStyleClass = 'filter: none !important; stroke: #4ea1f3 !important; fill: none !important;';
+                    break;
+                case 'minimal':
+                    iconStyleClass = 'filter: none !important; opacity: 0.7 !important;';
+                    break;
+                default: // original
+                    iconStyleClass = 'filter: none !important;';
+            }
+
+            const data = {
+                name: form.name.value || '[Your Name]',
+                title: form.title.value || '[Your Title]',
+                email: form.email.value || '[your.email@example.com]',
+                phone: form.phone.value || '[Your Phone]',
+                website: form.website.value || '',
+                location: form.location.value || '[Your Location]',
+                profileImage: form.profileImage.value || '',
+                linkedin: form.linkedin.value || '#',
+                facebook: form.facebook.value || '#',
+                instagram: form.instagram.value || '#',
+                twitter: form.twitter.value || '#',
+                github: form.github.value || '#'
+            };
+
+            // Generate initials if no image is provided
+            let profileImageHtml = '';
+            if (data.profileImage) {
+                profileImageHtml = `<img src="${data.profileImage}" alt="${data.name}" style="width: 100%; height: 100%; object-fit: cover; ${photoShapeStyle}">`;
+            } else {
+                const nameParts = data.name.split(' ');
+                const initials = nameParts.length > 1 
+                    ? (nameParts[0][0] + nameParts[nameParts.length - 1][0]).toUpperCase()
+                    : data.name[0].toUpperCase();
+                profileImageHtml = `<div class="initials-fallback" style="background: linear-gradient(45deg, ${primaryColor}, ${secondaryColor}); ${photoShapeStyle}">${initials}</div>`;
+            }
+
+            // Generate table structure based on photo layout
+            let tableStructure = '';
+            switch(photoLayout) {
+                case 'right':
+                    tableStructure = `
+                        <tr>
+                            <td style="vertical-align: top; ${textAlignStyle}">
+                                <div style="margin-bottom: ${spacing}px;">
+                                    <h2 class="name" style="${nameStyle}">${data.name}</h2>
+                                    <p class="title" style="${titleStyle}">${data.title}</p>
+                                </div>
+                                
+                                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/3178/3178283.png" alt="Email" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="mailto:${data.email}" class="contact-link" style="${contactStyle}">${data.email}</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Phone" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="tel:${data.phone}" class="contact-link" style="${contactStyle}">${data.phone}</a>
+                                        </td>
+                                    </tr>
+                                    ${data.website ? `
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png" alt="Website" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="${data.website}" class="contact-link" style="${contactStyle}">${data.website}</a>
+                                        </td>
+                                    </tr>
+                                    ` : ''}
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Location" class="contact-icon" style="${iconStyleClass}">
+                                            <span class="contact-text" style="${contactStyle}">${data.location}</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td style="vertical-align: top; padding-left: ${spacing}px; width: ${photoSize === 'small' ? '70px' : photoSize === 'large' ? '110px' : '90px'};">
+                                <div class="profile-image" style="${borderStyleClass} ${primaryColor}; ${photoShapeStyle}; ${photoSizeStyle}">
+                                    ${profileImageHtml}
+                                </div>
+                            </td>
+                        </tr>`;
+                    break;
+                case 'top':
+                    tableStructure = `
+                        <tr>
+                            <td style="vertical-align: top; text-align: center; padding-bottom: ${spacing}px;">
+                                <div class="profile-image" style="${borderStyleClass} ${primaryColor}; ${photoShapeStyle}; ${photoSizeStyle}; margin: 0 auto;">
+                                    ${profileImageHtml}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; ${textAlignStyle}">
+                                <div style="margin-bottom: ${spacing}px;">
+                                    <h2 class="name" style="${nameStyle}">${data.name}</h2>
+                                    <p class="title" style="${titleStyle}">${data.title}</p>
+                                </div>
+                                
+                                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/3178/3178283.png" alt="Email" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="mailto:${data.email}" class="contact-link" style="${contactStyle}">${data.email}</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Phone" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="tel:${data.phone}" class="contact-link" style="${contactStyle}">${data.phone}</a>
+                                        </td>
+                                    </tr>
+                                    ${data.website ? `
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png" alt="Website" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="${data.website}" class="contact-link" style="${contactStyle}">${data.website}</a>
+                                        </td>
+                                    </tr>
+                                    ` : ''}
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Location" class="contact-icon" style="${iconStyleClass}">
+                                            <span class="contact-text" style="${contactStyle}">${data.location}</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>`;
+                    break;
+                case 'bottom':
+                    tableStructure = `
+                        <tr>
+                            <td style="vertical-align: top; ${textAlignStyle}">
+                                <div style="margin-bottom: ${spacing}px;">
+                                    <h2 class="name" style="${nameStyle}">${data.name}</h2>
+                                    <p class="title" style="${titleStyle}">${data.title}</p>
+                                </div>
+                                
+                                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/3178/3178283.png" alt="Email" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="mailto:${data.email}" class="contact-link" style="${contactStyle}">${data.email}</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Phone" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="tel:${data.phone}" class="contact-link" style="${contactStyle}">${data.phone}</a>
+                                        </td>
+                                    </tr>
+                                    ${data.website ? `
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png" alt="Website" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="${data.website}" class="contact-link" style="${contactStyle}">${data.website}</a>
+                                        </td>
+                                    </tr>
+                                    ` : ''}
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Location" class="contact-icon" style="${iconStyleClass}">
+                                            <span class="contact-text" style="${contactStyle}">${data.location}</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; text-align: center; padding-top: ${spacing}px;">
+                                <div class="profile-image" style="${borderStyleClass} ${primaryColor}; ${photoShapeStyle}; ${photoSizeStyle}; margin: 0 auto;">
+                                    ${profileImageHtml}
+                                </div>
+                            </td>
+                        </tr>`;
+                    break;
+                case 'center':
+                    tableStructure = `
+                        <tr>
+                            <td style="vertical-align: top; text-align: center; padding-bottom: ${spacing}px;">
+                                <div class="profile-image" style="${borderStyleClass} ${primaryColor}; ${photoShapeStyle}; ${photoSizeStyle}; margin: 0 auto;">
+                                    ${profileImageHtml}
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="vertical-align: top; ${textAlignStyle}">
+                                <div style="margin-bottom: ${spacing}px;">
+                                    <h2 class="name" style="${nameStyle}">${data.name}</h2>
+                                    <p class="title" style="${titleStyle}">${data.title}</p>
+                                </div>
+                                
+                                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/3178/3178283.png" alt="Email" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="mailto:${data.email}" class="contact-link" style="${contactStyle}">${data.email}</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Phone" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="tel:${data.phone}" class="contact-link" style="${contactStyle}">${data.phone}</a>
+                                        </td>
+                                    </tr>
+                                    ${data.website ? `
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png" alt="Website" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="${data.website}" class="contact-link" style="${contactStyle}">${data.website}</a>
+                                        </td>
+                                    </tr>
+                                    ` : ''}
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Location" class="contact-icon" style="${iconStyleClass}">
+                                            <span class="contact-text" style="${contactStyle}">${data.location}</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>`;
+                    break;
+                default: // left
+                    tableStructure = `
+                        <tr>
+                            <td style="vertical-align: top; padding-right: ${spacing}px; width: ${photoSize === 'small' ? '70px' : photoSize === 'large' ? '110px' : '90px'};">
+                                <div class="profile-image" style="${borderStyleClass} ${primaryColor}; ${photoShapeStyle}; ${photoSizeStyle}">
+                                    ${profileImageHtml}
+                                </div>
+                            </td>
+                            <td style="vertical-align: top; ${textAlignStyle}">
+                                <div style="margin-bottom: ${spacing}px;">
+                                    <h2 class="name" style="${nameStyle}">${data.name}</h2>
+                                    <p class="title" style="${titleStyle}">${data.title}</p>
+                                </div>
+                                
+                                <table cellpadding="0" cellspacing="0" style="width: 100%;">
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/3178/3178283.png" alt="Email" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="mailto:${data.email}" class="contact-link" style="${contactStyle}">${data.email}</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/455/455705.png" alt="Phone" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="tel:${data.phone}" class="contact-link" style="${contactStyle}">${data.phone}</a>
+                                        </td>
+                                    </tr>
+                                    ${data.website ? `
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/841/841364.png" alt="Website" class="contact-icon" style="${iconStyleClass}">
+                                            <a href="${data.website}" class="contact-link" style="${contactStyle}">${data.website}</a>
+                                        </td>
+                                    </tr>
+                                    ` : ''}
+                                    <tr>
+                                        <td style="padding: 4px 0;">
+                                            <img src="https://cdn-icons-png.flaticon.com/512/854/854878.png" alt="Location" class="contact-icon" style="${iconStyleClass}">
+                                            <span class="contact-text" style="${contactStyle}">${data.location}</span>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>`;
+            }
+
+            // Update preview HTML with new styles
+            preview.innerHTML = `
+                <div style="position: absolute; top: 0; right: 0; width: 300px; height: 100%; background: linear-gradient(45deg, ${primaryColor}03, ${primaryColor}08); transform: skewX(-15deg);"></div>
+                
+                <table cellpadding="0" cellspacing="0" style="width: 100%; position: relative; font-family: ${fontFamily}, sans-serif; ${layoutStyle}" class="signature-container ${containerClass}">
+                    ${tableStructure}
+                    <tr>
+                        <td colspan="2" style="padding-top: ${spacing}px; margin-top: ${spacing}px; border-top: 1px solid ${primaryColor}20;">
+                            <div style="${textAlignStyle} padding: ${layout === 'compact' ? '8px' : layout === 'minimal' ? '6px' : '12px'}; border: ${layout === 'minimal' ? 'none' : `1px solid ${primaryColor}30`}; border-radius: 8px; background: ${layout === 'minimal' ? 'transparent' : `${primaryColor}03`};">
+                                <p style="margin: 0 0 ${layout === 'compact' ? '4px' : layout === 'minimal' ? '2px' : '8px'} 0; color: ${primaryColor}; font-size: ${layout === 'compact' ? '13px' : layout === 'minimal' ? '12px' : '14px'}; font-weight: ${fontWeight}; letter-spacing: 0.5px; font-family: ${fontFamily}, sans-serif;">Connect with me</p>
+                                <div style="display: ${textAlignment === 'center' ? 'flex' : 'inline-block'}; ${textAlignment === 'center' ? 'justify-content: center;' : textAlignment === 'right' ? 'text-align: right;' : 'text-align: left;'}">
+                                    ${data.linkedin !== '#' ? `<a href="${data.linkedin}" target="_blank" rel="noopener" class="social-icon" style="text-decoration: none; margin: 0 4px;">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" style="${iconStyleClass}">
+                                    </a>` : ''}
+                                    ${data.facebook !== '#' ? `<a href="${data.facebook}" target="_blank" rel="noopener" class="social-icon" style="text-decoration: none; margin: 0 4px;">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" style="${iconStyleClass}">
+                                    </a>` : ''}
+                                    ${data.instagram !== '#' ? `<a href="${data.instagram}" target="_blank" rel="noopener" class="social-icon" style="text-decoration: none; margin: 0 4px;">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram" style="${iconStyleClass}">
+                                    </a>` : ''}
+                                    ${data.twitter !== '#' ? `<a href="${data.twitter}" target="_blank" rel="noopener" class="social-icon" style="text-decoration: none; margin: 0 4px;">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="X" style="${iconStyleClass}">
+                                    </a>` : ''}
+                                    ${data.github !== '#' ? `<a href="${data.github}" target="_blank" rel="noopener" class="social-icon" style="text-decoration: none; margin: 0 4px;">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub" style="${iconStyleClass}">
+                                    </a>` : ''}
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    ${document.querySelector('.toggle-option[data-toggle="show"]').classList.contains('active') ? `
+                    <tr>
+                        <td colspan="2" style="padding-top: ${spacing}px;">
+                            <div style="${textAlignStyle} font-size: 11px; color: ${secondaryColor}80; font-family: ${fontFamily}, sans-serif; line-height: 1.4; padding: 0 4px;">
+                                <p style="margin: 0;">
+                                    <strong style="color: ${secondaryColor};">CONFIDENTIALITY NOTICE:</strong> This email and any attachments are intended solely for the designated recipient and may contain confidential or privileged information. If you are not the intended recipient, please notify the sender, do not copy or disclose its contents, and delete it from your system.
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                    ` : ''}
+                </table>
+            `;
+        }
+
+        // Optimize event listeners with debounce
+        const debouncedUpdatePreview = debounce(() => {
+            showLoading();
+            updatePreview();
+            setTimeout(hideLoading, 300);
+        }, 50);
+
+        // Add event listeners to all form inputs
+        document.querySelectorAll('#signatureForm input').forEach(input => {
+            input.addEventListener('input', debouncedUpdatePreview);
+        });
+
+        // Consolidated option group click handler
+        function handleOptionClick(event) {
+            const option = event.target.closest('button');
+            if (!option) return;
+            
+            const group = option.closest('.option-group');
+            if (group) {
+                group.querySelectorAll('button').forEach(opt => opt.classList.remove('active'));
+            }
+            option.classList.add('active');
+            debouncedUpdatePreview();
+        }
+
+        // Add event listeners to all design options
+        document.querySelectorAll('.option-group').forEach(group => {
+            group.addEventListener('click', handleOptionClick);
+        });
+
+        // Add event listener for font style
+        document.getElementById('fontStyle').addEventListener('change', debouncedUpdatePreview);
+
+        // Add event listener for spacing range
+        document.getElementById('spacingRange').addEventListener('input', function() {
+            document.querySelector('.spacing-value').textContent = this.value + 'px';
+            debouncedUpdatePreview();
+        });
+
+        // Initial preview update
+        updatePreview();
+
+        // Add image upload and initials functionality
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                if (file.size > 5 * 1024 * 1024) {
+                    showToast('Image size should be less than 5MB');
+                    return;
+                }
+                
+                if (!file.type.startsWith('image/')) {
+                    showToast('Please upload an image file');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imageUrl = e.target.result;
+                    document.getElementById('imageUrl').value = imageUrl;
+                    updateImagePreview(imageUrl);
+                    debouncedUpdatePreview();
+                };
+                reader.onerror = function() {
+                    showToast('Error reading the image file');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        function updateImagePreview(imageUrl) {
+            const preview = document.getElementById('imagePreview');
+            const initials = document.getElementById('initialsFallback');
+            
+            if (imageUrl) {
+                preview.innerHTML = `<img src="${imageUrl}" alt="Profile Preview" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">`;
+            } else {
+                updateInitials();
+            }
+        }
+
+        function updateInitials() {
+            const name = document.getElementById('name').value;
+            const initials = document.getElementById('initialsFallback');
+            const preview = document.getElementById('imagePreview');
+            
+            if (name) {
+                const nameParts = name.split(' ');
+                const initialsText = nameParts.length > 1 
+                    ? (nameParts[0][0] + nameParts[nameParts.length - 1][0]).toUpperCase()
+                    : nameParts[0][0].toUpperCase();
+                
+                initials.textContent = initialsText;
+                preview.innerHTML = '<div class="initials-fallback" id="initialsFallback">' + initialsText + '</div>';
+            } else {
+                initials.textContent = 'JD';
+                preview.innerHTML = '<div class="initials-fallback" id="initialsFallback">JD</div>';
+            }
+            debouncedUpdatePreview();
+        }
+
+        // Update initials when name changes
+        document.getElementById('name').addEventListener('input', function() {
+            if (!document.getElementById('imageUrl').value) {
+                updateInitials();
+            }
+        });
+
+        // Add signature generation functionality
+        function updateLivePreview() {
+            updatePreview();
+            showToast('Preview updated successfully!');
+        }
+
+        // Add custom color picker functionality
+        const customColorBtn = document.querySelector('.custom-color');
+        const customColorPicker = document.querySelector('.custom-color-picker');
+        const primaryColorInput = document.getElementById('primaryColor');
+        const secondaryColorInput = document.getElementById('secondaryColor');
+
+        customColorBtn.addEventListener('click', function() {
+            document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('active'));
+            this.classList.add('active');
+            customColorPicker.style.display = 'block';
+            debouncedUpdatePreview();
+        });
+
+        function updateCustomColors() {
+            debouncedUpdatePreview();
+        }
+
+        // Sync color inputs
+        primaryColorInput.addEventListener('input', updateCustomColors);
+        secondaryColorInput.addEventListener('input', updateCustomColors);
+
+        // Add click handler for preset color options
+        document.querySelectorAll('.color-option:not(.custom-color)').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.color-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                customColorPicker.style.display = 'none';
+                debouncedUpdatePreview();
+            });
+        });
+
+        // Add error boundary
+        window.onerror = function(msg, url, lineNo, columnNo, error) {
+            showToast('An error occurred. Please try again.');
+            console.error('Error: ' + msg + '\nURL: ' + url + '\nLine: ' + lineNo + '\nColumn: ' + columnNo + '\nError object: ' + JSON.stringify(error));
+            return false;
+        };
+
+        // Add tab switching functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                this.classList.add('active');
+                document.getElementById(this.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Add loading state
+        function showLoading() {
+            const loading = document.createElement('div');
+            loading.className = 'loading';
+            loading.innerHTML = `
+                <div class="spinner"></div>
+                <p>Updating preview...</p>
+            `;
+            document.querySelector('.preview-section').appendChild(loading);
+        }
+
+        function hideLoading() {
+            const loading = document.querySelector('.loading');
+            if (loading) {
+                loading.remove();
+            }
+        }
+
+        // Add input validation
+        function validateInput(input) {
+            const value = input.value.trim();
+            if (input.required && !value) {
+                showToast(`${input.name} is required`);
+                return false;
+            }
+            
+            if (input.type === 'email' && value) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(value)) {
+                    showToast('Please enter a valid email address');
+                    return false;
+                }
+            }
+            
+            if (input.type === 'url' && value && value !== '#') {
+                try {
+                    new URL(value);
+                } catch {
+                    showToast('Please enter a valid URL');
+                    return false;
+                }
+            }
+            
+            return true;
+        }
+
+        // Add validation to form inputs
+        document.querySelectorAll('#signatureForm input').forEach(input => {
+            input.addEventListener('blur', function() {
+                validateInput(this);
+            });
+        });
+
+        // Add design tab switching functionality
+        document.querySelectorAll('.design-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                document.querySelectorAll('.design-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.design-content').forEach(c => c.classList.remove('active'));
+                
+                this.classList.add('active');
+                document.getElementById(this.dataset.tab).classList.add('active');
+            });
+        });
+
+        // Add event listeners for font weight options
+        document.querySelectorAll('.weight-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.weight-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                debouncedUpdatePreview();
+            });
+        });
+
+        // Add event listeners for toggle options
+        document.querySelectorAll('.toggle-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const group = this.closest('.toggle-options');
+                group.querySelectorAll('.toggle-option').forEach(opt => opt.classList.remove('active'));
+                this.classList.add('active');
+                debouncedUpdatePreview();
+            });
+        });
+    </script>
+</body>
+</html> 
